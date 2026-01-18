@@ -1,6 +1,6 @@
 # 📊 Superstore Sales & Revenue Performance Dashboard
 
-![Dashboard Preview](Sales%20Executive%20Overview.png)
+![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
 
 ## 🚀 Project Overview
 
