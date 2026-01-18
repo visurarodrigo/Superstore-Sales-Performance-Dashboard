@@ -1,16 +1,14 @@
 # 📊 Superstore Sales & Revenue Performance Dashboard
 
-Page 1 - Sales Executive Overview
-![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
-
 ## 🚀 Project Overview
 
-**Status:** Phase 1 Complete (Executive Overview)  
+This project is an end-to-end Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The goal was to transform raw sales data into an interactive dashboard that helps stakeholders monitor **Year-over-Year (YoY) growth**, **profitability**, and **regional trends**
+
+# Phase 1 - Sales Executive Overview
+
+![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
+ 
 **Tools:** Microsoft Power BI, Power Query, DAX
-
-This project is an end-to-end Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The goal was to transform raw sales data into an interactive dashboard that helps stakeholders monitor **Year-over-Year (YoY) growth**, **profitability**, and **regional trends**.
-
----
 
 ## 🛠️ Technical Implementation
 
