@@ -2,15 +2,13 @@
 
 ## 🚀 Project Overview
 
-This project delivers a comprehensive Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The primary objective was to transform raw transactional data into an interactive, executive-ready dashboard that enables stakeholders to monitor **Year-over-Year (YoY) growth**, **profitability trends**, and **regional performance** in real-time.
-
----
+This project is an end-to-end Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The goal was to transform raw sales data into an interactive dashboard that helps stakeholders monitor **Year-over-Year (YoY) growth**, **profitability**, and **regional trends**
 
 ## Phase 1: Sales Executive Overview
 
 ![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
-
-**Technologies Used:** Microsoft Power BI, Power Query, DAX
+ 
+**Tools:** Microsoft Power BI, Power Query, DAX
 
 ### 🛠️ Technical Implementation
 
