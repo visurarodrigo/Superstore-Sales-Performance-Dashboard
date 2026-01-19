@@ -114,7 +114,7 @@ Avg Discount % = AVERAGE('Orders'[Discount])
 
 ## 📂 Project Files
 
-- Superstore sales dataset.xlsx - Source data file
+- Superstore sales dataset.xlsx - Source data file (From Kaggle)
 - Superstore_Sales_Dashboard.pbix - Power BI report file
 - README.md - Project documentation
 - Screenshots - Dashboard visuals
