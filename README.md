@@ -124,8 +124,6 @@ Avg Discount % = AVERAGE('Orders'[Discount])
 
 ## 🎯 Project Outcomes & Impact
 
-This comprehensive Business Impact
-
 This comprehensive Business Intelligence solution successfully transformed raw transactional data into strategic, actionable insights that empower data-driven decision-making. Through advanced DAX modeling, AI-powered analytics, and intuitive visualizations, the dashboard directly addresses critical business challenges:
 
 **Operational Excellence:** Identified over $50,000 in potential annual savings through strategic discount optimization and loss-prevention initiatives in underperforming geographic markets.
