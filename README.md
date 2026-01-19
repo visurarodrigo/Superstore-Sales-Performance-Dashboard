@@ -64,7 +64,7 @@ DIVIDE(CurrentSales - PreviousSales, PreviousSales, 0)
 
 ## Phase 2: Customer & Regional Intelligence
 
-![Customer & Regional Intelligence](Screenshots/Customer%20&%20Regional%20Intelligence.jpg)
+![Customer & Regional Intelligence](Screenshots/Customer%20&%20Regional%20Insights.jpg)
 
 **Technologies Used:** Microsoft Power BI, DAX, AI Visuals, Geospatial Analytics
 
@@ -117,12 +117,14 @@ Avg Discount % = AVERAGE('Orders'[Discount])
 
 - `Superstore sales dataset.xlsx` - Source data file
 - `Superstore_Sales_Dashboard.pbix` - Power BI report file
+- 'README.md' - ReadMe
+- 'Screenshots' - Power BI Report look
 
 ---
 
 ## 🎯 Project Outcomes & Impact
 
-This comprehensive BusineBusiness Impact
+This comprehensive Business Impact
 
 This comprehensive Business Intelligence solution successfully transformed raw transactional data into strategic, actionable insights that empower data-driven decision-making. Through advanced DAX modeling, AI-powered analytics, and intuitive visualizations, the dashboard directly addresses critical business challenges:
 
