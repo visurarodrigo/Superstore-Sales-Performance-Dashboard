@@ -4,6 +4,8 @@
 
 This project is an end-to-end Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The goal was to transform raw sales data into an interactive dashboard that helps stakeholders monitor **Year-over-Year (YoY) growth**, **profitability**, and **regional trends**
 
+---
+
 ## Phase 1: Sales Executive Overview
 
 ![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
@@ -88,7 +90,7 @@ Avg Discount % = AVERAGE('Orders'[Discount])
 
 #### 2. AI-Driven Root Cause Analysis
 
-**Decomposition Tree:** Leveraged Power BI's nativ
+**Decomposition Tree:** Used Power BI’s native Decomposition Tree visual to dynamically identify profit drivers across Region, Category, and Sub-Category.
 
 **Outlier Detection:** Designed a Customer Value Matrix (scatter plot) mapping Sales against Profit. This visualization immediately isolates unprofitable high-volume customers (bottom-right quadrant), distinguishing them from the healthy customer base.
 
@@ -96,29 +98,35 @@ Avg Discount % = AVERAGE('Orders'[Discount])
 
 ##Business Logic:** Standard choropleth maps display only sales volume, masking profitability concerns. A profitability-focused visualization was required.
 
-**Implementation:** Applied conditional formatting rules to state-level geographic data:
-
-- **Red:** States with Total Profit < 0 (loss-generating)
-- **Blue:** States with Total Profit ≥ 0 (profitable)
+**Implementation:** Applied conditional formatting rules to state-level geographic data
 
 **Impact:** Immediately surfaces high-volume markets (e.g., Texas) that are paradoxically unprofitable, preventing misguided strategy based on vanity metrics.
 
 ### 💡 Key Business Insights
 
-- **Geographic Profitability Gap:** Despite the West Region's strong performance, Texas and Ohio generate net losses despite substantial sales volumes—indicating critical operational inefficiencies.
+- **Geographic Profitability Gap:** Texas and Ohio generate net losses despite strong sales volumes, indicating operational inefficiencies.
 
-- **Customer Profitability Paradox:** The scatter matrix reveals a distinct cluster of high-revenue customers ($5,000+) operating at negative margins, likely due to excessive service costs or unsustainable discount structures.
+- **Customer Profitability Paradox:** A distinct cluster of high-revenue customers ($5,000+) operates at negative margins—likely due to excessive discounts or service costs.
 
-- **Discount Rate Correlation:** Strong correlation exists between Central Region losses and an average discount rate exceeding 20%. Normalization to the 15% national average represents a significant margin recovery opportunity.
+- **Discount Rate Correlation:** Central Region losses correlate strongly with an average discount rate exceeding 20%. Normalizing to the 15% national average presents a margin recovery opportunity.
 
 ---
 
 ## 📂 Project Files
 
-- `Superstore sales dataset.xlsx` - Source data file
-- `Superstore_Sales_Dashboard.pbix` - Power BI report file
-- 'README.md' - ReadMe
-- 'Screenshots' - Power BI Report look
+- Superstore sales dataset.xlsx - Source data file
+- Superstore_Sales_Dashboard.pbix - Power BI report file
+- README.md - Project documentation
+- Screenshots - Dashboard visuals
+
+---
+
+### ▶️ How to Run This Project
+
+- Clone or download the repository
+- Open Superstore_Sales_Dashboard.pbix in Power BI Desktop
+- Ensure the Excel dataset path is correctly linked
+- Refresh the data
 
 ---
 
@@ -140,11 +148,20 @@ This comprehensive Business Intelligence solution successfully transformed raw t
 
 ---
 
+### 🧩 Skills Demonstrated
+
+- Power BI Dashboard Development
+- Star Schema Data Modeling
+- DAX Time Intelligence
+- ETL with Power Query
+- AI Visuals & Root Cause Analysis
+- Business Insight Communication
+
 ## 🤝 Connect & Collaborate
 
-This project demonstrates proficiency in **Microsoft Power BI**, **DAX**, **Power Query**, and **Business Intelligence best practices**. For questions, collaboration opportunities, or feedback, feel free to reach out.
+This project demonstrates proficiency in Microsoft Power BI, DAX, Power Query, and Business Intelligence best practices.
 
-**Skills Demonstrated:** Data Modeling · ETL · DAX · Time Intelligence · Data Visualization · Business Analytics
+Skills: Data Modeling · ETL · DAX · Time Intelligence · Data Visualization · Business Analytics
 
 ---
 
