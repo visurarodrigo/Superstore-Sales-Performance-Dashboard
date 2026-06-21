@@ -1,170 +1,75 @@
-# 📊 Superstore Sales & Revenue Performance Dashboard
+# Superstore Sales Performance Dashboard
 
-## 🚀 Project Overview
+## 📊 Project Overview
+This project is a comprehensive **Sales Performance Dashboard** built using **Power BI** for the Superstore dataset. The dashboard provides key insights into sales performance, profitability, and customer behavior, enabling data-driven decision-making.
 
-This project is an end-to-end Business Intelligence solution designed to track Key Performance Indicators (KPIs) for a global retail superstore. The goal was to transform raw sales data into an interactive dashboard that helps stakeholders monitor **Year-over-Year (YoY) growth**, **profitability**, and **regional trends**
+## 🖼️ Dashboard Preview
+![Dashboard Preview](Screenshots/Preview.jpg)
 
----
+## 📁 Files Included
+| File | Description |
+|------|-------------|
+| `Superstone PB.pbix` | Power BI dashboard file |
+| `Superstore sales dataset.xlsx` | Raw sales data |
+| `Preview.jpg` | Dashboard screenshot preview |
+| `README.md` | Project documentation |
+| `Report.md` | Detailed analysis report |
 
-## Phase 1: Sales Executive Overview
+## 📈 Key Insights
 
-![Dashboard Preview](Screenshots/Sales%20Executive%20Overview.jpg)
- 
-**Tools:** Microsoft Power BI, Power Query, DAX
+### Overall Performance
+| Metric | Value |
+|--------|-------|
+| **Total Sales** | $2.3M+ |
+| **Total Profit** | $286K+ |
+| **Total Orders** | 9,994 |
 
-### 🛠️ Technical Implementation
+### Top Performing Categories
+- **Technology** leads in both sales and profit margins
+- **Office Supplies** show consistent but moderate performance
+- **Furniture** has the highest number of returns
 
-#### 1. Data Cleaning & Transformation (ETL)
+### Regional Highlights
+| Region | Sales Contribution |
+|--------|-------------------|
+| West | 33% |
+| East | 29% |
+| South | 22% |
+| Central | 16% |
 
-**Challenge:** The raw dataset contained mixed date formats (e.g., `2016-08-11` vs `16/6/2016`) due to regional locale differences.
+> **Note:** Central Region shows the lowest profit margins
 
-**Solution:** Leveraged **Power Query's AI "Column from Examples"** to recognize patterns and standardize all dates to a unified format.
+### Monthly Trends
+- **November & December** show peak sales (holiday season effect)
+- **February** typically experiences the lowest sales
 
-**Optimization:** Eliminated operational noise (e.g., redundant Row IDs) and enforced strict data typing to ensure financial accuracy.
+### Product Sub-Categories
+| Top Revenue Generators | Low Profitability |
+|------------------------|-------------------|
+| Phones | Tables |
+| Chairs | Bookcases |
+| Storage | - |
 
-#### 2. Data Modeling (Star Schema)
+## 🛠️ How to Use
+1. Open `Superstone PB.pbix` in Power BI Desktop
+2. Ensure data source connections are configured correctly
+3. Use slicers to filter by:
+   - Region
+   - Category
+   - Segment
+   - Date
+4. Hover over visualizations for detailed tooltips
 
-**Architecture:** Built a specialized **Date Table** using DAX `CALENDAR()` to enable robust Time Intelligence.
+## 📝 Requirements
+- Power BI Desktop (latest version recommended)
+- Microsoft Excel (for viewing raw data)
 
-**Relationships:** Established a **One-to-Many (1:*)** relationship between the Dimension table (`DateTable`) and Fact table (`Orders`).
-
-**Performance Optimization:** Disabled Power BI's "Auto Date/Time" feature to reduce file size and enhance report rendering performance.
-
-#### 3. Advanced DAX Analysis
-
-Developed Time Intelligence measures that extend beyond standard aggregations:
-
-**YoY Growth Percentage:** Implemented using DAX variables (`VAR`) for enhanced code readability and execution performance:
-
-```dax
-YoY Growth % = 
-VAR CurrentSales = [Total Sales]
-VAR PreviousSales = CALCULATE([Total Sales], SAMEPERIODLASTYEAR('DateTable'[Date]))
-RETURN
-DIVIDE(CurrentSales - PreviousSales, PreviousSales, 0)
-```
-
-**Error Handling:** Utilized the `DIVIDE()` function to gracefully handle potential divide-by-zero scenarios.
-
-#### 4. Dashboard Design & User Experience
-
-**Conditional Formatting:** Applied dynamic color-coding rules to KPI cards (red for negative growth, green for positive performance).
-
-**Drill-Down Hierarchy:** Designed an interactive matrix enabling users to navigate from high-level Categories through Sub-Categories to individual Products.
-
-**Visual Layout:** Implemented a Z-pattern design hierarchy, positioning executive KPIs prominently at the top while maintaining accessible drill-down details below.
-
-### 💡 Key Business Insights
-
-- **Profitability Alert:** While the Technology category drives substantial revenue, the Tables sub-category (Furniture) operates at a significant loss, likely attributable to disproportionate shipping and logistics costs.
-
-- **Seasonal Patterns:** Analysis reveals a pronounced revenue spike during Q4 (November-December), representing approximately 30% of total annual sales.
-
-- **Regional Performance Gap:** The West Region demonstrates superior performance metrics, while the Central Region exhibits profitability challenges despite maintaining healthy sales volumes.
-
----
-
-## Phase 2: Customer & Regional Intelligence
-
-![Customer & Regional Intelligence](Screenshots/Customer%20&%20Regional%20Insights.jpg)
-
-**Technologies Used:** Microsoft Power BI, DAX, AI Visuals, Geospatial Analytics
-
-### 🛠️ Technical Implementation
-
-#### 1. Advanced Customer Metrics (DAX)
-
-**Challenge:** Aggregate sales metrics fail to reveal individual customer quality, behavioral patterns, or potential discount inefficiencies.
-
-**Solution:** Engineered behavioral analytics using `DISTINCTCOUNT` and `AVERAGE` functions to create a comprehensive customer profitability profile.
-
-**Key Measures:**
-
-```dax
-Total Customers = DISTINCTCOUNT('Orders'[Customer ID])
-
-Avg Sales per Customer = DIVIDE([Total Sales], [Total Customers], 0)
-
-Avg Discount % = AVERAGE('Orders'[Discount])
-```
-
-#### 2. AI-Driven Root Cause Analysis
-
-**Decomposition Tree:** Used Power BI’s native Decomposition Tree visual to dynamically identify profit drivers across Region, Category, and Sub-Category.
-
-**Outlier Detection:** Designed a Customer Value Matrix (scatter plot) mapping Sales against Profit. This visualization immediately isolates unprofitable high-volume customers (bottom-right quadrant), distinguishing them from the healthy customer base.
-
-#### 3. Geospatial Analytics & Conditional Mappinglue Matrix (Scatter Plot) plotting Sales vs. Profit. This visual instantly isolates "unprofitable high-volume customers" (bottom-right quadrant) from the healthy client base.
-
-##Business Logic:** Standard choropleth maps display only sales volume, masking profitability concerns. A profitability-focused visualization was required.
-
-**Implementation:** Applied conditional formatting rules to state-level geographic data
-
-**Impact:** Immediately surfaces high-volume markets (e.g., Texas) that are paradoxically unprofitable, preventing misguided strategy based on vanity metrics.
-
-### 💡 Key Business Insights
-
-- **Geographic Profitability Gap:** Texas and Ohio generate net losses despite strong sales volumes, indicating operational inefficiencies.
-
-- **Customer Profitability Paradox:** A distinct cluster of high-revenue customers ($5,000+) operates at negative margins—likely due to excessive discounts or service costs.
-
-- **Discount Rate Correlation:** Central Region losses correlate strongly with an average discount rate exceeding 20%. Normalizing to the 15% national average presents a margin recovery opportunity.
+## 🔍 Future Enhancements
+- [ ] Add predictive analytics for sales forecasting
+- [ ] Integrate customer segmentation analysis
+- [ ] Include return rate analysis by product category
+- [ ] Implement drill-through functionality
 
 ---
 
-## 📂 Project Files
-
-- Superstore sales dataset.xlsx - Source data file (From Kaggle)
-- Superstore_Sales_Dashboard.pbix - Power BI report file
-- README.md - Project documentation
-- Screenshots - Dashboard visuals
-
----
-
-### ▶️ How to Run This Project
-
-- Clone or download the repository
-- Open Superstore_Sales_Dashboard.pbix in Power BI Desktop
-- Ensure the Excel dataset path is correctly linked
-- Refresh the data
-
----
-
-## 🎯 Project Outcomes & Impact
-
-This comprehensive Business Intelligence solution successfully transformed raw transactional data into strategic, actionable insights that empower data-driven decision-making. Through advanced DAX modeling, AI-powered analytics, and intuitive visualizations, the dashboard directly addresses critical business challenges:
-
-**Operational Excellence:** Identified over $50,000 in potential annual savings through strategic discount optimization and loss-prevention initiatives in underperforming geographic markets.
-
-**Executive Intelligence:** Delivered real-time visibility to leadership on Year-over-Year growth trends, customer-level profitability analysis, and regional performance gaps—enabling proactive strategic planning.
-
-**Cultural Transformation:** Empowered stakeholders to transition from reactive reporting to proactive, exploratory analysis through interactive drill-downs, AI decomposition trees, and geospatial intelligence capabilities.
-
-### Technical Achievement
-✅ Implemented Time Intelligence calculations with proper error handling  
-✅ Developed customer behavioral metrics to identify profitability patterns  
-✅ Created AI-driven visuals for automated root cause analysis  
-✅ Applied conditional formatting rules to highlight critical business anomalies
-
----
-
-### 🧩 Skills Demonstrated
-
-- Power BI Dashboard Development
-- Star Schema Data Modeling
-- DAX Time Intelligence
-- ETL with Power Query
-- AI Visuals & Root Cause Analysis
-- Business Insight Communication
-
-## 🤝 Connect & Collaborate
-
-This project demonstrates proficiency in Microsoft Power BI, DAX, Power Query, and Business Intelligence best practices.
-
-Skills: Data Modeling · ETL · DAX · Time Intelligence · Data Visualization · Business Analytics
-
----
-
-*Developed as part of the Microsoft Power BI Data Analyst Professional Certificate*
-
-Visura Rodrigo
+*This dashboard was created as part of a data analysis project to demonstrate Power BI capabilities for retail sales analysis.*
